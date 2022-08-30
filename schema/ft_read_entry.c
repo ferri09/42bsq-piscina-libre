@@ -6,11 +6,16 @@
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 07:34:49 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/30 11:55:02 by mferri-m         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:42:08 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_bsq.h"
+
+mferri-m
+hmestre
+boris
+rruiz
 
 //Calculamos la longitud de la primera linea
 int	ft_size_first_line(int fn); return (size);

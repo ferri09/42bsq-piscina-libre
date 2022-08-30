@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_process_map.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarja-p <abarja-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 10:00:58 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/30 10:08:23 by abarja-p         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:34:59 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_bsq.h"
+
+sersanch
+bimartin
+marijime
+ccaballe
 
 // Algoritmo que procesa el mapa y pone en la posicion el lado del cuadrado que se puede crear
 char **ft_process_map(char **map, char *cond, int *mat_info) return (sqr);

@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarja-p <abarja-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 07:46:02 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/30 09:54:35 by abarja-p         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:33:07 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_bsq.h"
+
+areverte
+forlando
+orodrigu
+rogmarti
+
 
 // Trataremos el mapa como un string ya que es mas facil de verificar si todo es correcto
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_basic_ft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abarja-p <abarja-p@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 07:41:15 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/30 09:51:33 by abarja-p         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:23:05 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ void	ft_putstr(char *str);
 void	ft_print_error();
 
 int	ft_atoi(char *str); return (nb);
-
