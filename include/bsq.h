@@ -6,7 +6,7 @@
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 07:33:55 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/30 19:50:45 by mferri-m         ###   ########.fr       */
+/*   Updated: 2022/08/30 21:46:56 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 
-// ----------------- ft_basic.c---------------
+// ----------------- utils ---------------
 void	ft_putchar(char c);
 int	    ft_strlen(char *str);
 void	ft_putstr(char *str);
