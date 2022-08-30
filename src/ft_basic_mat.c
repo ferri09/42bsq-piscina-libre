@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_basic_mat.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pbacardi <pbacardi@student.42barcel>       +#+  +:+       +#+        */
+/*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 13:18:22 by pbacardi          #+#    #+#             */
-/*   Updated: 2022/08/30 16:28:17 by hecrodri         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:20:25 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	g_fail_after = 10;
-int	g_num_alloc = 0;
 
-void	*xmalloc(size_t size)
-{
-	g_num_alloc++;
-	if (g_num_alloc >= g_fail_after)
-	{
-		return (0);
-	}
-	return (malloc(size));
-}
-#define malloc  xmalloc
-
-//------------------------
-
-//#include "ft_bsq.h"
+#include "../include/bsq.h"
 
 void	ft_free_char(char **matrix, int i);
 
 void	ft_free_int(int **matrix, int i);
 
-// Creamos la matriz con malloc y la protegemos, free incluidos
 char	**ft_create_matrix_char(int row, int col)
 {
 	char	**matrix;
@@ -59,7 +43,6 @@ char	**ft_create_matrix_char(int row, int col)
 	return (matrix);
 }
 
-// Creamos la matriz con malloc y la protegemos, free incluidos
 int	**ft_create_matrix_int(int row, int col)
 {
 	int	**matrix;
@@ -82,7 +65,6 @@ int	**ft_create_matrix_int(int row, int col)
 	return (matrix);
 }
 
-//acortar lineas de la funcion ft_max_res
 void	populate_res(int max, int i, int j, int *pos)
 {
 	pos[0] = max;
@@ -90,7 +72,6 @@ void	populate_res(int max, int i, int j, int *pos)
 	pos[2] = j;
 }
 
-// Encontra el maximo de una matriz y devolvemos la posicion
 int	*ft_max_mat(int **sqr, int row, int col)
 {
 	int	max;

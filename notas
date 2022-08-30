@@ -1,0 +1,3 @@
+void	ft_print_error();
+
+int	ft_atoi(char *str); return (nb);

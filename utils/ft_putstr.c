@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_height.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 19:21:48 by mferri-m          #+#    #+#             */
-/*   Updated: 2022/08/30 19:48:45 by mferri-m         ###   ########.fr       */
+/*   Created: 2022/08/30 19:29:10 by mferri-m          #+#    #+#             */
+/*   Updated: 2022/08/30 19:29:26 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/bsq.h"
+#include "../include/bsq.h"
 
-int	ft_check_height(char *str, int nb_row)
+void ft_putstr(char *str)
 {
-	int	count;
-	int	rows;
+    int i;
 
-	count = 0;
-	rows = 0;
-	while (str[count])
-	{
-		if (str[count] == '\n')
-			rows++;
-	count++;
-	}
-	if (rows > 0 && rows == nb_row)
-		return (1);
-	else
-		return (0);
+    i = 0;
+    while (str[i] != '\0')
+    {
+        ft_putchar(str[i]);
+        i++;
+    }
 }

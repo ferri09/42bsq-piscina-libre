@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_free_mat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hecrodri <hecrodri@student.42barcel>       +#+  +:+       +#+        */
+/*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 16:10:48 by hecrodri          #+#    #+#             */
-/*   Updated: 2022/08/30 16:20:59 by hecrodri         ###   ########.fr       */
+/*   Updated: 2022/08/30 19:21:03 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 
-// Libera las filas reservadas y la array que las contiene
+#include "../include/bsq.h"
+
 void	ft_free_char(char **matrix, int i)
 {
 	int	j;
@@ -25,7 +25,6 @@ void	ft_free_char(char **matrix, int i)
 	free(matrix);
 }
 
-//equivalente a ft_free_int pero con int
 void	ft_free_int(int **matrix, int i)
 {
 	int	j;
