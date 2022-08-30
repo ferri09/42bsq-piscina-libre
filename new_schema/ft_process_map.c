@@ -6,7 +6,7 @@
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 10:00:58 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/30 12:34:59 by mferri-m         ###   ########.fr       */
+/*   Updated: 2022/08/30 15:10:14 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ marijime
 ccaballe
 
 // Algoritmo que procesa el mapa y pone en la posicion el lado del cuadrado que se puede crear
-char **ft_process_map(char **map, char *cond, int *mat_info) return (sqr);
+int **ft_process_map(char **map, char *cond, int *mat_info) return (sqr);
 
 // Revisamos la fila que va de pos[1] a pos[1] + pos [2] en la fila pos[0]
 int	ft_check_row(char **map, char *cond, int *pos)
