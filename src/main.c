@@ -6,78 +6,76 @@
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 19:41:33 by mferri-m          #+#    #+#             */
-/*   Updated: 2022/08/30 22:11:32 by mferri-m         ###   ########.fr       */
+/*   Updated: 2022/08/31 01:45:01 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/bsq.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-    if (init_program(ac, av) == 84)
-        return (84);
-    else
-        return (0);
+	if (init_program(ac, av) == 84)
+		return (84);
+	else
+		return (0);
 }
 
-int init_program(int ac, char **av)
+int	init_program(int ac, char **av)
 {
-    int filedest;
-    int size;
-
-    if (ac == 1)
-        filedest = 0;
-    else
-        filedest = 1;
-    engine(ac, av, filedest);
-}
-
-int engine(int ac, char **av, int filedest)
-{
-	char	*buff;
-	char	**map;
-	int		**sqr;
+	int		filedest;
 	int		size;
-	char	*max;
-    char    *path;
-    char    *condition;
-    int     i;
+	t_misc	misc;
 
-    i = 0;
+	if (ac == 1)
+		filedest = 0;
+	else
+		filedest = 1;
+	engine(ac, av, filedest, misc);
+	return (0);
+}
+
+int	engine(int ac, char **av, int filedest, t_misc misc)
+{
+	int	i;
+
+    i = 1;
+	misc.path = av[1];
     while (av[i++] != NULL)
     {
-        if (map_manager(path, filedest, condition) == NULL)
+        if (map_manager(misc.path, filedest, misc.condition) == NULL)
             ft_print_error(5);
-        else
-            map = ft_str_to_map(buff);
-            if (map)
-                sqr = ft_process_map(map, condition);
-            else
-                return (84);
-            if (sqr)
-                max = ft_max_mat(sqr);
-            else
-                return (84);
-            print_sol(map, max);
+        // else
+        //     // map = ft_str_to_map(buff);
+        //     // if (map)
+        //     //     sqr = ft_process_map(map, condition);
+        //     // else
+        //     //     return (84);
+        //     if (sqr)
+        //         max = ft_max_mat(sqr);
+        //     else
+        //         return (84);
+        //     print_sol(map, max);
     }
 	return (0);
 }
 
-char *map_manager(char *path, int filedest, char *condition)
+char	*map_manager(char *path, int filedest, char *condition)
 {
-    char *buff;
+	char	*buff;
 
-    buff = ft_read_file(path);
-    if (!buff)
-        return (NULL);
-    if(ft_check_map(buff) == 1)
-        return (NULL);
-    buff = ft_cut_head(buff, condition);
-    return (buff);
+	buff = ft_read_file(path);
+	if (!buff)
+		return (NULL);
+    condition = ft_cut_head(buff);
+	if (condition == NULL)
+		return (NULL);
+    buff = ft_cut_body(buff);
+	if (!buff)
+		return (NULL);
+	// if(ft_check_map(buff) == 1)
+	//     return (NULL);
+	return (buff);
 }
-
-
-
 
 
 

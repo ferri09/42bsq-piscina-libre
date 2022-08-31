@@ -10,16 +10,18 @@ NAME            =   bsq
 FLAGS           =   -Wall -Werror -Wextra
 
 # define ruta de archivo de srcs
-SRC				=	main.c	\
+SRC				=	src/main.c	\
 					src/error_manager/ft_check_chars.c	\
 					src/error_manager/ft_check_height.c	\
 					src/error_manager/ft_check_width.c	\
 					src/error_manager/ft_check_map.c	\
 					src/ft_basic_mat.c	\
 					src/ft_free_mat.c	\
+					src/ft_cut_head.c	\
 					utils/ft_putchar.c	\
 					utils/ft_strlen.c	\
 					utils/ft_putstr.c	\
+					utils/ft_print_error.c	\
 
 # define los archivos objecto
 OBJS            =   $(SRC:.c=.o)
