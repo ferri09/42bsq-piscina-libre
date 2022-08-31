@@ -6,7 +6,7 @@
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 19:41:33 by mferri-m          #+#    #+#             */
-/*   Updated: 2022/08/31 01:45:01 by mferri-m         ###   ########.fr       */
+/*   Updated: 2022/08/31 16:41:31 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,42 +39,49 @@ int	engine(int ac, char **av, int filedest, t_misc misc)
 	int	i;
 
     i = 1;
-	misc.path = av[1];
-    while (av[i++] != NULL)
+	
+    while (av[i] != NULL)
     {
-        if (map_manager(misc.path, filedest, misc.condition) == NULL)
+		misc.path = av[i];
+        if (map_manager(filedest, &misc) == NULL)
             ft_print_error(5);
-        // else
-        //     // map = ft_str_to_map(buff);
-        //     // if (map)
-        //     //     sqr = ft_process_map(map, condition);
-        //     // else
-        //     //     return (84);
-        //     if (sqr)
-        //         max = ft_max_mat(sqr);
-        //     else
-        //         return (84);
-        //     print_sol(map, max);
+		ft_rowcol_count(&misc);
+		ft_str_to_map(misc.row, misc.col, &misc);
+		if (misc.map)
+			misc.sqr = ft_process_map(misc.map, ft_obstacle(misc), misc.row, misc.col);
+		else
+		 	return (84);
+        if (misc.sqr)
+    		misc.max = ft_max_mat(misc.sqr, misc.row, misc.col);
+        else
+            return (84);
+		if (misc.max[0] != 0)
+        	ft_print_sol(misc, misc.max);
+		else
+			ft_print_error(5);
+		ft_putchar('\n');
+		i++;
     }
 	return (0);
 }
 
-char	*map_manager(char *path, int filedest, char *condition)
+char	*map_manager(int filedest, t_misc *misc)
 {
-	char	*buff;
-
-	buff = ft_read_file(path);
-	if (!buff)
+	misc->buff = ft_read_file(misc);
+	//printf("Buff is:\n%s\n", misc->buff);
+	if (!misc->buff)
 		return (NULL);
-    condition = ft_cut_head(buff);
-	if (condition == NULL)
+    misc->condition = ft_cut_head(misc->buff);
+	//printf("Head is:\n%s\n", misc->condition);
+	if (misc->condition == NULL)
 		return (NULL);
-    buff = ft_cut_body(buff);
-	if (!buff)
+    misc->buff = ft_cut_body(misc->buff);
+	//printf("Body is:\n%s\n", misc->buff);
+	if (!misc->buff)
 		return (NULL);
-	// if(ft_check_map(buff) == 1)
+	// if(ft_check_map(misc->buff) == 1)
 	//     return (NULL);
-	return (buff);
+	return (misc->buff);
 }
 
 
@@ -117,19 +124,19 @@ int	ft_size_bytes(char *path)
     return (size);
 }
 
-char *ft_read_file(char *path)
+char *ft_read_file(t_misc *misc)
 {
-    char *buff = NULL;
-    int size = ft_size_bytes(path);
-    int fd = open(path, O_RDONLY);
+    misc->buff = NULL;
+    int size = ft_size_bytes(misc->path);
+    int fd = open(misc->path, O_RDONLY);
     if (fd == -1)
         return (NULL);
-    buff = malloc((size + 1) * sizeof(char));
-    if (!buff)
+    misc->buff = malloc((size + 1) * sizeof(char));
+    if (!misc->buff)
         return (NULL);
-    if (read(fd, buff, size) == -1)
+    if (read(fd, misc->buff, size) == -1)
         return (NULL);
-    buff[size] = '\0';
+    misc->buff[size] = '\0';
     close(fd);
-    return (buff);
+    return (misc->buff);
 }

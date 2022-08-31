@@ -1,0 +1,6 @@
+La funcion ft_str_to_map recibe el str extraido de fichero de mapa sin la primera linea, el numero de filas y de columnas que tiene el mapa.
+Crea una matriz vacia llamada tab a traves de la funcion ft_create_matrix_char del archivo ft_basic_mat.c y la llena leyendo caracter a caracter del str recibido.
+
+Antes del segundo bucle (el que usa j) suma 1 al contador k que es lo que permite que no almacene el salto de linea que indica el cambio de fila en el mapa.
+
+La funcion retorna la matriz tab llena con los datos del mapa.

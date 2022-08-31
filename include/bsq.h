@@ -6,7 +6,7 @@
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 07:33:55 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/31 01:19:27 by mferri-m         ###   ########.fr       */
+/*   Updated: 2022/08/31 16:13:51 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,12 @@ typedef struct misc {
 	char	*condition;
 	char	*buff;
 	char	*path;
-	char	*max;
+	int		*max;
 	char	**map;
 	int		**sqr;
 	int		size;
+	int 	row;
+	int 	col;
 }	t_misc;
 
 // ----------------- utils ---------------
@@ -51,12 +53,26 @@ int		ft_first_line_mat(char *str);
 // ----------------- main program ---------------
 int		init_program(int ac, char **av);
 int		engine(int ac, char **av, int filedest, t_misc misc);
-char	*map_manager(char *path, int filedest, char *condition);
-char	*ft_read_file(char *path);
 
 // ----------------- map process ---------------
 char	*ft_cut_head(char *buff);
 char	*ft_cut_body(char *buff);
 int		ft_check_map(char *str, char *cond, int nb_row);
+int		**ft_process_map(char **map, char cond, int row, int col);
+
+char	**ft_create_matrix_char(int row, int col);
+char *my_strncpy(char *dest, char const *src, int n);
+char *ft_read_file(t_misc *misc);
+char	*map_manager(int filedest, t_misc *misc);
+void ft_str_to_map(int row, int col, t_misc *misc);
+void	ft_rowcol_count(t_misc *misc);
+int	ft_atoi(char *str);
+
+// ----------------- print_solv ---------------
+void	ft_print_sol(t_misc misc, int *max_mat);
+
+char ft_full(t_misc misc);
+char ft_obstacle(t_misc misc);
+int	*ft_max_mat(int **sqr, int row, int col);
 
 #endif

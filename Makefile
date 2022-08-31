@@ -7,7 +7,7 @@ CC              =   gcc
 NAME            =   bsq
 
 # define las flags del compilador
-FLAGS           =   -Wall -Werror -Wextra
+FLAGS           =   -g -Wall -Werror -Wextra
 
 # define ruta de archivo de srcs
 SRC				=	src/main.c	\
@@ -18,7 +18,13 @@ SRC				=	src/main.c	\
 					src/ft_basic_mat.c	\
 					src/ft_free_mat.c	\
 					src/ft_cut_head.c	\
+					src/ft_process_map.c	\
+					src/ft_process_str.c	\
+					src/ft_rowcol_count.c	\
+					src/ft_print_sol.c	\
+					utils/ft_strncpy.c	\
 					utils/ft_putchar.c	\
+					utils/ft_atoi.c	\
 					utils/ft_strlen.c	\
 					utils/ft_putstr.c	\
 					utils/ft_print_error.c	\

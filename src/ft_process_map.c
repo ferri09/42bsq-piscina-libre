@@ -6,7 +6,7 @@
 /*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/30 12:43:16 by bimartin          #+#    #+#             */
-/*   Updated: 2022/08/31 01:09:33 by mferri-m         ###   ########.fr       */
+/*   Updated: 2022/08/31 16:18:15 by mferri-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	**ft_create_matrix_int(int row, int col);
 
 //#inlcude "bsq.h"
 
-int	ft_strlen(char *str)
+/* int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -30,7 +30,7 @@ int	ft_strlen(char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
+} */
 
 int	ft_check_row(char **map, char cond, t_box current)
 {
@@ -71,26 +71,26 @@ int	ft_check_square(char **map, char cond, t_box current)
 		return (0);
 }
 
-int	**ft_process_map(char **map, char cond, int *mat_info)
+int	**ft_process_map(char **map, char cond, int row, int col)
 {
 	int	i;
 	int	j;
 	int	**sqr;
 	t_box	current;
 
-	sqr = ft_create_matrix_int(mat_info[0], mat_info[1]);
+	sqr = ft_create_matrix_int(row, col);
 	if (!sqr)
 		return (0);
 	j = 0;
-	while (j < mat_info[0])
+	while (j < row)
 	{
 		i = 0;
-		while (i < mat_info[1])
+		while (i < col)
 		{
 			current.row = j;
 			current.col = i;
 			current.size = 0;
-			while (current.size <= mat_info[0] - current.row && current.size <= mat_info[1] - current.col)
+			while (current.size <= row - current.row && current.size <= col - current.col)
 			{
 				if (ft_check_square(map, cond, current))
 					current.size++;
@@ -106,17 +106,17 @@ int	**ft_process_map(char **map, char cond, int *mat_info)
 }
 
 //---------for testing---------
-int main(void)
+/* int main(void)
 {
 	char	**map;
 	int		mat_info[2] = {8, 10};
 
-	map = ft_create_matrix_char(mat_info[0], mat_info[1]);
+	map = ft_create_matrix_char(row, col);
 	if (!map)
 		return (-1);
-	for(int i = 0; i < mat_info[0]; i++)
+	for(int i = 0; i < row; i++)
 	{
-		for(int j = 0; j < mat_info[1]; j++)
+		for(int j = 0; j < col; j++)
 	 		map[i][j] = '.';
 	}
 	map[3][3] = 'o';
@@ -128,20 +128,20 @@ int main(void)
 	if(!res)
 		return (-1);
 	printf("---------input---------\n");
-	for(int i = 0; i < mat_info[0]; i++)
+	for(int i = 0; i < row; i++)
 	{
-		for(int j = 0; j < mat_info[1]; j++)
+		for(int j = 0; j < col; j++)
 			printf("%c ", map[i][j]);
 		printf("\n");
 	}	
 	printf("\n---------output--------\n");
-	for(int i = 0; i < mat_info[0]; i++)
+	for(int i = 0; i < row; i++)
 	{
-		for(int j = 0; j < mat_info[1]; j++)
+		for(int j = 0; j < col; j++)
 			printf("%d ", res[i][j]);
 		printf("\n");
 	}
 	free(map);
 	free(res);
-}
+} */
 //-----------------------------
