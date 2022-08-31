@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   bsq.h                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 07:33:55 by abarja-p          #+#    #+#             */
-/*   Updated: 2022/08/31 16:13:51 by mferri-m         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef BSQ_H
 # define BSQ_H
 
@@ -33,8 +21,8 @@ typedef struct misc {
 	char	**map;
 	int		**sqr;
 	int		size;
-	int 	row;
-	int 	col;
+	int		row;
+	int		col;
 }	t_misc;
 
 // ----------------- utils ---------------
@@ -61,18 +49,20 @@ int		ft_check_map(char *str, char *cond, int nb_row);
 int		**ft_process_map(char **map, char cond, int row, int col);
 
 char	**ft_create_matrix_char(int row, int col);
-char *my_strncpy(char *dest, char const *src, int n);
-char *ft_read_file(t_misc *misc);
+int		**ft_create_matrix_int(int row, int col);
+char	*my_strncpy(char *dest, char const *src, int n);
+char	*ft_read_file(t_misc *misc);
 char	*map_manager(int filedest, t_misc *misc);
-void ft_str_to_map(int row, int col, t_misc *misc);
+void	ft_str_to_map(int row, int col, t_misc *misc);
 void	ft_rowcol_count(t_misc *misc);
-int	ft_atoi(char *str);
+int		ft_atoi(char *str);
 
 // ----------------- print_solv ---------------
 void	ft_print_sol(t_misc misc, int *max_mat);
 
-char ft_full(t_misc misc);
-char ft_obstacle(t_misc misc);
-int	*ft_max_mat(int **sqr, int row, int col);
+char	ft_full(t_misc misc);
+char	ft_obstacle(t_misc misc);
+int		*ft_max_mat(int **sqr, int row, int col);
+int		**ft_process_map(char **map, char cond, int row, int col);
 
 #endif

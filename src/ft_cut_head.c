@@ -1,25 +1,13 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_cut_head.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mferri-m <mferri-m@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 22:27:31 by mferri-m          #+#    #+#             */
-/*   Updated: 2022/08/31 16:36:57 by mferri-m         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../include/bsq.h"
 
-char *ft_cut_head(char *buff)
+char	*ft_cut_head(char *buff)
 {
-	int i;
-	int j;
-	char *head;
+	int		i;
+	int		j;
+	char	*head;
 
 	i = 0;
-	while(buff[i] && buff[i] != '\n')
+	while (buff[i] && buff[i] != '\n')
 		i++;
 	head = (char *) malloc(i + 1 * sizeof(char));
 	if (!head)
@@ -34,11 +22,11 @@ char *ft_cut_head(char *buff)
 	return (head);
 }
 
-char *ft_cut_body(char *buff)
+char	*ft_cut_body(char *buff)
 {
-	int i;
-	int j;
-	char *body;
+	int		i;
+	int		j;
+	char	*body;
 
 	i = 0;
 	j = 0;
